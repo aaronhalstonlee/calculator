@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title></title>
-        <link>
+        <meta charset="UTF-8">
+        <title>Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css'>
+        <link rel="stylesheet" href="./stylesheet.css" type="text/css">
     </head>
     <body>
-        <div class="container"></div>
+        <div class="container">
             <div id="body">
                 <div id="face">
                     <div id="screen">
@@ -15,37 +20,38 @@
                     </div>
                     <div id="pad">
                         <div id="row1" class="button-pad">
-                        <button id='seven' class="equate btn btn-secondary num">7</button>
-                        <button id='eight' class="equate btn btn-secondary num">8</button>
-                        <button id='nine' class="equate btn btn-secondary num">9</button>
-                        <button id='divide' class="equate btn btn-secondary operator">/</button>
-                        <button id="onButton" class="btn btn-secondary"><span id="on" class="other">ON</span></button>
+                            <button id='seven' class="equate btn btn-secondary num">7</button>
+                            <button id='eight' class="equate btn btn-secondary num">8</button>
+                            <button id='nine' class="equate btn btn-secondary num">9</button>
+                            <button id='divide' class="equate btn btn-secondary operator">/</button>
+                            <button id="onButton" class="btn btn-secondary"><span id="on" class="other">ON</span></button>
                         </div>
                         <div id="row2" class="button-pad">
-                        <button id='four' class="equate btn btn-secondary num">4</button>
-                        <button id='five' class="equate btn btn-secondary num">5</button>
-                        <button id='six' class="equate btn btn-secondary num">6</button>
-                        <button id='multiply' class="equate btn btn-secondary operator">*</button>
-                        <button id="offButton" class="btn btn-secondary"><span id="off" class="other">OFF</span></button>
+                            <button id='four' class="equate btn btn-secondary num">4</button>
+                            <button id='five' class="equate btn btn-secondary num">5</button>
+                            <button id='six' class="equate btn btn-secondary num">6</button>
+                            <button id='multiply' class="equate btn btn-secondary operator">*</button>
+                            <button id="offButton" class="btn btn-secondary"><span id="off" class="other">OFF</span></button>
                         </div>
                         <div id="clearButtn">
-                        <button id="clear" class="clear btn btn-secondary operator"><span class="clear" id="other">CE</span></button>
+                            <button id="clear" class="clear btn btn-secondary operator"><span class="clear" id="other">CE</span></button>
                         </div>
                         <div id="row3" class="button-pad">
-                        <button id='one' class="equate btn btn-secondary num">1</button>
-                        <button id='two' class="equate btn btn-secondary num">2</button>
-                        <button id='three' class="equate btn btn-secondary num">3</button>
-                        <button id='subtract' class="equate btn btn-secondary operator">-</button>
+                            <button id='one' class="equate btn btn-secondary num">1</button>
+                            <button id='two' class="equate btn btn-secondary num">2</button>
+                            <button id='three' class="equate btn btn-secondary num">3</button>
+                            <button id='subtract' class="equate btn btn-secondary operator">-</button>
                         </div>
-                        
                         <div id="row4" class="button-pad">
-                        <button id='zero' class="equate btn btn-secondary num">0</button>
-                        <button id='decimal' class="equate btn btn-secondary">.</button>
-                        <button id='add' class="equate btn btn-secondary operator">+</button>
-                        <button id="equals" class="btn btn-success operator">=</button>
+                            <button id='zero' class="equate btn btn-secondary num">0</button>
+                            <button id='decimal' class="equate btn btn-secondary">.</button>
+                            <button id='add' class="equate btn btn-secondary operator">+</button>
+                            <button id="equals" class="btn btn-success operator">=</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <script src="./script.js" type="text/javascript"></script>
     </body>
 </html>

@@ -1,68 +1,65 @@
-var equation = '';
-var powerOn = false;
-var display = $("#display");
-var zero = $('#zero').click();
-var multReg = /(^\*)/gi;
-var divReg = /(^\/)/gi;
-var zeroReg = /0{2,}/gi;
-var decimal = true;
-var check = 0;
-$(function(){
-  $("#onButton").click(function(){
-    if (!powerOn){
-      display.html('0');
-      powerOn = true;
-      console.log(powerOn, check++)
-    } else {
-      //display.html(equation);
-      console.log(powerOn, check++)
-    }
-  });
-  
-  $("#offButton").click(function(){
-    if (powerOn){
-      display.html('');
-      equation = '';
-      powerOn = false;
-      console.log(powerOn, check++)
-    }
-  });
-  //display.html('0')
-  equation='';
-  
-  $("#clear").click(function(){
-    equation = '';
-    display.html('0');
-  });
-  
-  function updateEquation(input){
-    equation += input;
-  }
-  
-  function updateDisplay(eq){
-    display.html(eq);
-  }
-  
-  
-  $(".equate").click(function(){
+const multReg = /(^\*)/gi;
+const divReg = /(^\/)/gi;
+const zeroReg = /0{2,}/gi;
+const display = document.getElementById('display');
+const onButton = document.getElementById("onButton");
+const offButton = document.getElementById("offButton");
+const clearButton = document.getElementById("clear");
+const equalButton = document.getElementById("equals");
+let equateList = document.getElementsByClassName('equate');
+let equation = '';
+let powerOn = false;
     
-    if (display.html() == '0' && $(this).html() == '0'){
-      //do nothing!
-    } else {
-      equation += $(this).html();
-      display.html(equation)
+onButton.addEventListener('click', function(){
+    if (!powerOn){
+        display.innerHTML = '0';
+        powerOn = true;
     }
-  });
-  
-  $("#equals").click(function(){
+})
+
+offButton.addEventListener('click', function(){
+    display.innerHTML = '';
+    equation = '';
+    powerOn = false;
+})
+        
+clearButton.addEventListener('click', function(){
+    equation = '';
+    display.innerHTML = '0';
+})
+    
+function updateEquation(input){
+    equation += input;
+}
+    
+function updateDisplay(eq){
+    display.innerHTML = eq;
+}
+
+[].forEach.call(equateList, (element) =>{
+    element.addEventListener('click', function(e){
+        if (display.innerHTML == '0' && e.target.innerHTML == '0'){
+            //do nothing!
+        } else {
+            equation += e.target.innerHTML;
+            display.innerHTML = equation
+        }
+    })
+})
+
+// function for eval alternative
+function calculate(eq){
+    return Function(`'use strict';if(${eq}){ return ${eq};} else { return '';}`)()
+}    
+//
+
+equalButton.addEventListener('click', function(){
     if (equation.match(multReg)){
-      display.html('ERR');
+        display.innerHTML = 'ERR';
     }
     if (equation.match(divReg)){
-      display.html('ERR');
+        display.innerHTML = 'ERR';
     }
-    equation = eval(equation);
-    display.html(equation);
-    
-  });
+    equation = calculate(equation);
+    display.innerHTML = equation;
 })
